@@ -1,0 +1,52 @@
+@media (min-width: 768px) {
+	.btn-toolbar .btn > [class^="fui-"] {
+		font-size: 28px;
+		margin: 0 1px;
+	}
+	
+	.editForm.visible {
+		bottom: 60px;
+	}
+	
+	.submit {
+		font-size: 30px;
+		margin-right: -15px;
+		top: -107px;
+	}
+	
+	#submitTask, #submitLike {
+		top: -79px;
+	}
+	
+	#mask {
+		height: 44px;
+	}
+	
+	footer.below {
+		bottom: -43px;
+	}
+	
+	#home p {
+		font-size: 26px;
+	}
+	
+	h5, .h5 {
+		font-size: 35px;
+	}
+	
+	h8, h8.last {
+		font-size: 25px;
+	}
+	
+	#gotonotes {
+		margin-top: 40px;
+	}
+	
+	.btn {
+		font-size: 22px;
+	}
+	
+	#tips h8.last {
+		margin-top: 50px;
+	}
+}

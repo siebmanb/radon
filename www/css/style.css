@@ -1,0 +1,522 @@
+/* general */
+html, body {
+	height: 97%;
+}
+
+body {
+	margin: 15px 0 10px 0;
+}
+
+h5, h6, h7, h8 {
+	color: #1abc9c;
+	text-align: center;
+}
+
+h6 {
+	font-size: 19px;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+input[type="text"], textarea {
+	-webkit-appearance: none;
+	background: none;
+	border: 1px solid #1abc9c;
+	display: block;
+	font-size: 16px;
+	margin: 0 20px;
+	outline: none;
+	padding: 0;
+	width: 80%;
+}
+
+.btn-block {
+	margin: auto;
+	width: 80%;
+}
+
+#gotonotes {
+	opacity: 0.5;
+}
+
+#gotonotes.btnactive {
+	opacity: 1;
+}
+
+.hidden {
+	display: none;
+}
+
+footer {
+	background: transparent;
+	bottom: 10px;
+	position: fixed; 
+	width: 100%;
+	-webkit-transition: bottom 0.5s ease-in-out;
+    -moz-transition: bottom 0.5s ease-in-out;
+    -ms-transition: bottom 0.5s ease-in-out;
+    -o-transition: bottom 0.5s ease-in-out;
+    transition: bottom 0.5s ease-in-out;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.submit {
+	background: url(../img/check.png) no-repeat;
+	background-position: 5px 5px;
+	background-size: 25px 25px;
+	color: #1abc9c;
+	cursor: pointer;
+	font-size: 23px;
+	height: 35px;
+	margin-right: -10px;
+	padding: 0 0 5px 10px;
+	position: absolute;
+	right: 8%;
+	top: -121px;
+	z-index: 1;
+	width: 35px;
+}
+
+.submit:before {
+	content: '';
+}
+
+/* home */
+#home {
+	margin: 20px 20px 0 20px;
+	padding-bottom: 20px;
+}
+
+/* tips */
+#tips {
+	display: none;
+	margin: 20px;
+	padding-bottom: 20px;
+}
+
+#tips h8.last {
+	display: block;
+	font-style: italic;
+	font-size: 17px;
+	margin-top: 30px;
+	text-align: center;
+}
+
+#gototips {
+	margin-top: 20px;
+}
+
+/* edit form */
+#edit {
+	display: none;
+}
+
+.btn-toolbar .btn.btn-primary {
+	padding: 0;
+}
+
+.btn-toolbar .btn-group > .btn.btn-primary:nth-child(6) {
+	border-bottom-right-radius: 4px;
+}
+
+.btn-primary:hover {
+	background-color: #1abc9c;
+}
+
+.btn-primary span.active {
+	background: #48c9b0;	
+}
+
+.btn > [class^="fui-"] {
+	top: 0;
+}
+
+.btn-toolbar .btn.btn-primary span {
+	border: 15px solid transparent;
+}
+
+#title {	
+	font-size: 17px;
+	padding-left: 5px;
+	margin: 0 auto 15px auto;
+	width: 90%;
+}
+
+#titleDiv {
+	border: 0;
+	color: #1abc9c;
+	font-size: 20px;
+	margin: 0 auto 15px auto;
+	width: 90%;
+}
+
+
+/* edit form - quote */
+.editForm {
+	opacity: 0;
+	padding-top: 12px;
+}
+
+.submit {
+	opacity: 0;
+}
+
+.submit.visible:active {
+	opacity: 0.7;
+}
+
+.editForm textarea {	
+	background: white;
+	margin: auto;
+	margin-bottom: 10px;
+	padding: 10px 23px 10px 10px;
+ 	width: 80%;
+}
+
+.editForm input[type="text"] {
+	background: white;
+	margin: 0 auto 10px auto;
+	padding: 5px 23px 5px 5px;
+}
+
+hr, #report hr.el {
+	margin: 0 auto 20px auto;
+	padding: 0;
+	border-top: 0;
+	border-bottom: 1px solid #1abc9c;
+	margin: 0 20px;
+	opacity: 1;
+}
+
+.editForm.visible {
+	bottom: 70px;
+	opacity: 1;
+    position: absolute;
+	width: 100%;
+}
+
+.submit.visible {
+	opacity: 1;
+	-webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.btn-toolbar {
+	display: block;
+	margin: auto;
+	text-align: center;
+	width: 90%;
+}
+
+.btn-toolbar .btn-group {
+	float: none;
+}
+
+footer.below {
+	bottom: -46px;	
+}
+
+#mask {
+	height: 34px;
+	padding: 5px 5px 0 5px;
+	position: absolute;
+	right: -5px;
+	top: -34px;
+	width: 42px;
+}
+
+#mask .tagsinput-add,#mask .tagsinput-add:hover {
+	background: none;
+}
+
+footer #mask span {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+
+footer.below #mask {
+	display: block;
+}
+
+footer.below #mask span {
+	-webkit-transform: none;
+	-moz-transform: none;
+	-o-transform: none;
+}
+
+footer #maskcontainer {
+	background-color: #1abc9c;
+	height: 100%;
+	width: 100%;
+}
+
+/* report page */
+#report {
+	margin: 0 0 0 0;
+	padding-bottom: 60px;
+	padding-top: 26px;	
+}
+
+#edit.discrete #report, #edit.discrete #title {
+	opacity: 0.5;
+}
+
+#report .el {
+	opacity: 1;
+	-webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+	margin-bottom: 0;
+    padding: 20px;
+}
+
+#report > .el:nth-child(even) {
+	background: #fafafa;
+}
+
+#report > .el:nth-child(odd) {
+	background: white;
+}
+
+#report .el.hrEl {
+/* 	background: none; */
+/* 	margin-top: 10px; */
+/* 	margin-bottom: 10px; */
+	background: url(../img/pix.png) repeat-x;
+	background-position: center center;
+	display: block;
+	height: 20px;
+	margin: 0 20px;
+}
+
+@-webkit-keyframes changeopacity {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+#report .el.updating {
+	-webkit-animation-duration: 1s;
+  	-webkit-animation-name: changeopacity;
+  	-webkit-animation-iteration-count: infinite;
+  	-webkit-animation-direction: alternate;
+}
+
+.listEl, .quoteEl, .likeEl, .taskEl, .textEl {
+	line-height: 23px;
+	margin-bottom: 20px;
+	text-align: justify;
+}
+
+.textEl {
+	font-size: 15px;
+}
+
+.quoteEl {
+	font-style: italic;
+	line-height: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.quoteEl:before {
+	color: #1abc9c;
+	content: "“";
+	font-size: 25px;
+	padding-right: 5px;
+}
+
+.quoteEl:after {
+	color: #1abc9c;
+	content: "”";
+	font-size: 25px;
+	padding-left: 5px;
+}
+
+.listEl p {
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.listEl li:before {
+	color: #1abc9c;
+	content: "• ";
+	font-size: 14px;
+	padding-right: 4px;
+	position: relative;
+	top: -2px;
+}
+
+.listEl ul {
+    list-style: none;
+	line-height: 17px;
+    padding:0;
+    margin:0;
+}
+
+.listEl li { 
+	font-size: 16px;
+    padding-left: 24px; 
+    text-indent: -.7em;
+}
+
+.taskEl .fui-checkbox-checked {
+	color: #1abc9c;
+	font-size: 15px;
+	padding-right: 10px;
+}
+
+#submitTask, #submitLike {
+	top: -91px;
+}
+
+#report > .el.likeEl {
+	color: white;
+	background: #1abc9c;
+	font-size: 21px;
+}
+
+.likeEl .fui-heart {
+	color: white;
+	font-size: 15px;
+	padding-right: 10px;
+}
+
+/* interactions */
+#deleteEl, #deleteDoc {
+	cursor: pointer;
+	position: absolute;
+	right: -25px;
+	-webkit-transition: right 0.5s ease-in-out;
+    -moz-transition: right 0.5s ease-in-out;
+    -ms-transition: right 0.5s ease-in-out;
+    -o-transition: right 0.5s ease-in-out;
+    transition: right 0.5s ease-in-out;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+#deleteEl span, #deleteDoc span {
+	background: #C0392B;
+	border-radius: 12px;
+	color: white;
+	font-size: 14px;
+	height: 25px;
+	width: 24px;
+	text-align: center;
+}
+
+#deleteEl.right,#deleteDoc.right {
+	right: 5px;
+}
+
+#modal {
+	background: #34495e;
+	cursor: pointer;
+	color: white;
+    display: block;
+    left: 20%;
+    margin: auto;
+    opacity: 0;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 60%;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+	z-index: 2;
+}
+
+#modal .fui-mail {
+	padding-right: 10px;
+}
+
+#modal.visible {
+	opacity: 1
+}
+
+#maskModal {
+	background: rgba(255,255,255,0.7);
+	display: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+/* notes form */
+
+#notes {
+	display: none;
+	margin: 0 20px;
+}
+
+#notes .header, #edit .header {
+	background: white;
+	left: 0;
+	padding-top: 10px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+#notnotesyet {
+	font-style: italic;
+	font-size: 15px;
+	padding-top: 50px;
+}
+
+#addNote {
+	color: #1abc9c;
+	cursor: pointer;
+	font-weight: bold;
+	height: 30px;
+	position: absolute;
+	text-align: center;
+	top: 5px;
+	right: 12px;
+	width: 30px;
+}
+
+#addNote:active {
+	opacity: 0.7;
+}
+
+#listNotes {	
+	margin: 0;
+	padding: 60px 0 15px 0;
+}
+
+#listNotes li {
+	font-size: 21px;
+	line-height: 24px;
+	list-style: none;
+	margin: 0 0 15px 0;
+	padding: 0;
+}
+
+#listNotes li.empty {
+	font-style: italic;
+}
