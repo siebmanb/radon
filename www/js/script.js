@@ -16,20 +16,20 @@ $(document).ready(function() {
 		openTips();
 		tipsRead();
 	});
-	// fin home btn
+	// end home btn
 
 	// tips
 	$$('#tips').swipeRight(function() {
 		backToHomeFromTips();
 	});
-	// fin tips
+	// end tips
 
 	// notes btn
 	$$('#addNote').touch(function() {
 		newDocument();
 	});
 
-	// fin notes btn
+	// end notes btn
 
 	// Toolbar btn
 	$$('.btn-toolbar .fui-new').touch(function() {
@@ -71,7 +71,7 @@ $(document).ready(function() {
 		$('.btn-toolbar .btn span.active').removeClass('active');
 		addLine();
 	});
-	// fin Toolbar btn
+	// end Toolbar btn
 
 	// submit buttons
 	$$('#submitQuote').touch(function() {
@@ -103,7 +103,7 @@ $(document).ready(function() {
 			addLike();
 		},300);
 	});
-	// fin submit buttons
+	// end submit buttons
 
 	// interactions
 	$$('#mask').touch(function() {
@@ -195,7 +195,7 @@ $(document).ready(function() {
 //	$('#modal').on('click', function() {
 //	sendEmail();
 //	});
-	// fin interactions
+	// end interactions
 
 });
 
@@ -280,24 +280,6 @@ function addToReport(input,classN,val,fromdb) {
 	addElement(rel,classN,val,CUR_DOC);
 }
 
-//causait un bug à l'ouverture d'un champ edit
-//function listenToScroll() {
-//$(window).on('scroll',function() {
-//onScroll();
-//});
-//}
-
-//function unlistenToScroll() {
-//$(window).off('scroll',function() {
-//onScroll();
-//});
-//}
-
-//function onScroll() {
-//editModeOff();
-//hideDelete();
-//}
-
 //function showModal() {
 //$('#modal').css('opacity',1);
 //$('#maskModal').show();
@@ -308,7 +290,6 @@ function addToReport(input,classN,val,fromdb) {
 /**** Quote ****/
 function showQuoteForm(el,val) {
 	deleteForms();
-//	addBottomSpace(66);
 	addSubmit("<span class='input-icon fui-check-inverted submit' id='submitQuote'></span><form class='editForm' id='quoteForm'><textarea id='quote' placeholder='an amazing quote'></textarea></form>");
 
 	if (el != undefined) {
@@ -341,7 +322,6 @@ function addQuote() {
 /**** Text ****/
 function showTextForm(el,val) {
 	deleteForms();
-//	addBottomSpace(66);
 	addSubmit("<span class='input-icon fui-check-inverted submit' id='submitText'></span><form class='editForm' id='textForm'><textarea id='text' placeholder='just some text'></textarea></form>");
 
 	if (el != undefined) {
@@ -373,7 +353,6 @@ function addText() {
 /**** List ****/
 function showListForm(el,val) {
 	deleteForms();
-//	addBottomSpace(66);
 	addSubmit("<span class='input-icon fui-check-inverted submit' id='submitList'></span><form class='editForm' id='listForm'><textarea id='list' placeholder='an interesting list'></textarea></form>");
 
 	if (el != undefined) {
@@ -412,7 +391,6 @@ function addList() {
 /**** Task ****/
 function showTaskForm(el,val) {
 	deleteForms();
-//	addBottomSpace(30);
 	addSubmit("<span class='input-icon fui-check-inverted submit' id='submitTask'></span><form class='editForm' id='taskForm'><input type='text' id='task' placeholder='a task to do'></form>");
 
 	if (el != undefined) {
@@ -451,7 +429,6 @@ function addTask() {
 /**** Like ****/
 function showLikeForm(el,val) {
 	deleteForms();
-//	addBottomSpace(30);
 	addSubmit("<span class='input-icon fui-check-inverted submit' id='submitLike'></span><form class='editForm' id='likeForm'><input type='text' id='like' placeholder='something inspiring'></form>");
 
 	if (el != undefined) {
@@ -615,12 +592,6 @@ function hideDelete() {
 		$('#deleteDoc').remove();
 	},500);
 }
-
-//function addBottomSpace(height) {
-//removeBottomSpace();
-//$('#report').append("<div id='xtraspace' style='height:" + height + "px'></div>");
-//scrollToBottom(true);
-//}
 
 function removeBottomSpace() {
 	$('#xtraspace').remove();

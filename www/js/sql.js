@@ -8,11 +8,7 @@ var CREATE_DB = [
 ];
 
 /**
- * Création d'une base de données locale
- * @param {String} name nom de la base
- * @param {String} version version de la base
- * @param {String} displayName nom affiché de la base
- * @param {Number} size taille de la base
+ * Creation of a local database
  */
 function newDB(name, version, displayName, size) {
 	DB = window.openDatabase(name, version, displayName, size);
@@ -20,9 +16,8 @@ function newDB(name, version, displayName, size) {
 }
 
 /**
- * Exécution des requêtes de création de la base
- * stockées dans le tableau CREATE_DB
- * @param {Object} tx pointeur sur la base, automatiquement renseigné
+ * Execution of request stored in the array CREATE_DB
+ * @param {Object} tx pointer on the database, automatically created
  */
 function createDB(tx) {
 	for (var i = 0; i < CREATE_DB.length ; i++) {
@@ -31,9 +26,9 @@ function createDB(tx) {
 }
 
 /**
- * Requête SQL d'insertion
- * @param {String} req requête SQL
- * @param {Object} tx pointeur sur la base
+ * SQL insert request
+ * @param {String} req request
+ * @param {Object} tx pointer on database
  */
 function insertSQL(req,fn) {
 	DB.transaction(function(tx) {
@@ -42,51 +37,44 @@ function insertSQL(req,fn) {
 }
 
 /**
- * Requête SQL de récupération
- * @param {String} req requête SQL
- * @param {Object} tx pointeur sur la base
+ * SQL get request
+ * @param {String} req request SQL
+ * @param {Object} tx pointer on database
  */
 function getSQL(req,fn) {
 	DB.transaction(function(tx) {
 		tx.executeSql(req, [], fn, errorReqDB);
 	}, errorReqDB);
-
-	// Accès aux datas : results.rows.item(i).email 
-//	function querySuccess(tx, results) {
-	// results ici
-	// results.rows.item(i)
-//	}
 }
 
 /**
- * Callback d'erreur à la création de la base
- * @param {Object} err objet d'erreur
+ * Error callback on database creation
+ * @param {Object} err error object
  */
 function errorDB(err) {
 	console.log(err);
-	if (DEBUG) alert("Erreur à la création: " + err.message);
+	if (DEBUG) alert("Error during creation: " + err.message);
 }
 
 /**
- * Callback de succès de la création de la base
+ * Success callback on database creation
  */
 function successDB(err) {
 
 }
 
 /**
- * Callback d'erreur d'une requête SQL
- * @param {Object} err objet d'erreur
+ * Error callback on SQL request
+ * @param {Object} err error object
  */
 function errorReqDB(err) {
-	if (DEBUG) alert("Erreur à la requête: " + err.message);
+	if (DEBUG) alert("Error on request: " + err.message);
 }
 
 /**
- * Callback de succès d'une requête SQL
+ * Success callback on SQL request
  */
-function successReqDB(err) {
-}
+function successReqDB(err) {}
 
 
 
