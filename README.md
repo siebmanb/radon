@@ -7,10 +7,14 @@ Radon is a mobile app built using jQuery and Cordova. The project is offered wit
 
 ## Instructions
 To deploy the app, execute the following command in a console, located in the project folder
+```
    cordova build ios
+```
 or
+```
    cordova build android
-	
+```
+
 Then you will find your native project (XCode or Java) inside the platforms folder.
 
 ## Feedback
