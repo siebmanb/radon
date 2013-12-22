@@ -4,8 +4,16 @@ $(document).ready(function() {
 	// SQL management
 	newDB("radon", "1.0", "radon", 200000);
 	var CUR_DOC = -1;
-	prefill();
+	
 	areTipsRead();
+	
+	// already seen tutorial ?
+	if (localStorage.first == 'true') {
+		openNotes();
+	} else {
+		prefill();
+		localStorage.first = 'true';
+	}
 
 	// home btn
 	$('body').on('click','#gotonotes.btnactive',function() {
@@ -28,8 +36,13 @@ $(document).ready(function() {
 	$$('#addNote').touch(function() {
 		newDocument();
 	});
-
 	// end notes btn
+	
+	// info btn
+	$$('#infoBtn').touch(function() {
+		backToHome();
+	});
+	// end info btn
 
 	// Toolbar btn
 	$$('.btn-toolbar .fui-new').touch(function() {
@@ -793,7 +806,7 @@ function prefill() {
 	var _this = this;
 	function callback(tx, results) {
 		if (results.rows.length == 0) {
-			addDocument(1,"Notes from my happy life");
+			addDocument(1,"Notes from my happy life (example)");
 			addElement(1,'textEl',"A few notes from my happy life. Looking back now is like reading a book about my life..." ,1);
 			addElement(2,'hrEl',"" ,1);
 			addElement(3,'quoteEl',"I have a dream that one day this nation will rise up and live out the true meaning of its creed: « We hold these truths to be self-evident, that all men are created equal. »" ,1);

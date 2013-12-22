@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/tablet.css">
 
-<script src="phonegap.js"></script>
+<script src="cordova.js"></script>
+<script type='application/javascript' src='js/fastclick.js'></script>
 <script type="text/javascript">
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
@@ -18,6 +19,10 @@
 			document.body.style.marginTop = "20px";
 		}
 	}
+	
+	window.addEventListener('load', function() {
+		FastClick.attach(document.body);
+	}, false);
 </script>
 
 
@@ -80,6 +85,7 @@
 
 	<div id='notes'>
 		<div class='header'>
+			<span id='infoBtn' class="fui-eye"></span>
 			<h6>Your notes</h6>
 			<span id='addNote' class="fui-plus"></span>
 			<hr>
