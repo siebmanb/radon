@@ -12,19 +12,11 @@
 
 <script src="cordova.js"></script>
 <script type='application/javascript' src='js/fastclick.js'></script>
-<script type="text/javascript">
-	document.addEventListener("deviceready", onDeviceReady, false);
-	function onDeviceReady() {
-		if (parseFloat(window.device.version) >= 7.0) {
-			document.body.style.marginTop = "20px";
-		}
-	}
-
-	window.addEventListener('load', function() {
-		FastClick.attach(document.body);
-	}, false);
-</script>
-
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/quo.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/sql.js"></script>
 
 </head>
 <body>
@@ -68,20 +60,20 @@
 
 			<h8>Edit a note</h8>
 			<p>
-				To edit a note, like its title for example, simply <b>open
-					it</b> by tapping its name and enter "edit mode" by <b>taping the
-					toolbox</b> at the bottom.
+				To edit a note, like its title for example, simply <b>open it</b> by
+				tapping its name and enter "edit mode" by <b>taping the toolbox</b>
+				at the bottom.
 			</p>
 
 			<h8>Edit an element</h8>
 			<p>
-				To edit an element from a note, simply <b>double-tap on
-					it</b>.
+				To edit an element from a note, simply <b>double-tap on it</b>.
 			</p>
-			
+
 			<h8>Share a note</h8>
 			<p>
-				To share a note by email, simply <b>hold on the screen</b> with the note opened. An email will be auto-filled with your note content.
+				To share a note by email, simply <b>hold on the screen</b> with the
+				note opened. An email will be auto-filled with your note content.
 			</p>
 
 			<h8 class='last'>We hope you will enjoy using our Radon app as
@@ -141,12 +133,20 @@
 			</div>
 		</footer>
 	</div>
+	<script type="text/javascript">
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		if (parseFloat(window.device.version) >= 7.0) {
+			$('#notes .header, #edit .header').css('padding-top','30px');
+			$('#addNote').css('top','25px');
+			$('#infoBtn').css('top','25px');
+			$('#home').css('margin-top','40px');
+		}
+	}
 
-
-	<script src="js/jquery-1.10.2.js"></script>
-	<script src="js/quo.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/sql.js"></script>
+	window.addEventListener('load', function() {
+		FastClick.attach(document.body);
+	}, false);
+</script>
 </body>
 </html>
