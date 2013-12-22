@@ -4,9 +4,9 @@ $(document).ready(function() {
 	// SQL management
 	newDB("radon", "1.0", "radon", 200000);
 	var CUR_DOC = -1;
-	
+
 	areTipsRead();
-	
+
 	// already seen tutorial ?
 	if (localStorage.first == 'true') {
 		openNotes();
@@ -37,7 +37,7 @@ $(document).ready(function() {
 		newDocument();
 	});
 	// end notes btn
-	
+
 	// info btn
 	$$('#infoBtn').touch(function() {
 		backToHome();
@@ -196,18 +196,18 @@ $(document).ready(function() {
 		updateDocName();
 	});
 
-//	$$('#edit').hold(function() {
-//	showModal();
-//	});
+	$$('#edit').hold(function() {
+		showModal();
+	});
 
-//	$('#maskModal').on('click', function() {
-//	$(this).hide();
-//	$('#modal').css('opacity',0);
-//	});
+	$('#maskModal').on('click', function() {
+		$(this).hide();
+		$('#modal').css('opacity',0);
+	});
 
-//	$('#modal').on('click', function() {
-//	sendEmail();
-//	});
+	$('#modal').on('click', function() {
+		sendEmail();
+	});
 	// end interactions
 
 });
@@ -293,10 +293,10 @@ function addToReport(input,classN,val,fromdb) {
 	addElement(rel,classN,val,CUR_DOC);
 }
 
-//function showModal() {
-//$('#modal').css('opacity',1);
-//$('#maskModal').show();
-//}
+function showModal() {
+	$('#modal').css('opacity',1);
+	$('#maskModal').show();
+}
 
 /***************/
 
@@ -320,7 +320,7 @@ function addQuote() {
 	var val = $('#quote').val();
 	val = replaceAll(val,'\n','<br>');
 	var newEl = ($('#quoteForm').attr('el-rel') == undefined);
-	
+
 	addToReport('#quoteForm','quoteEl',val);
 	removeForm();
 	removeBottomSpace();
@@ -351,7 +351,7 @@ function addText() {
 	var val = $('#text').val();
 	val = replaceAll(val,'\n','<br>');
 	var newEl = ($('#textForm').attr('el-rel') == undefined);
-	
+
 	addToReport('#textForm','textEl',val);
 	removeForm();
 	removeBottomSpace();
@@ -382,7 +382,7 @@ function addList() {
 	var val = $('#list').val();
 	var lines = val.split('\n');
 	var newEl = ($('#listForm').attr('el-rel') == undefined);
-	
+
 	// building the result
 	var ret = "<p>" + lines[0] + " :</p><ul>";
 	for (var i = 1 ; i < lines.length ; i++) {
@@ -427,7 +427,7 @@ function showTaskForm(el,val) {
 function addTask() {
 	var val = $('#task').val();
 	var newEl = ($('#taskForm').attr('el-rel') == undefined);
-	
+
 	addToReport('#taskForm','taskEl',val);
 	removeForm();
 	removeBottomSpace();
@@ -465,7 +465,7 @@ function showLikeForm(el,val) {
 function addLike() {
 	var val = $('#like').val();
 	var newEl = ($('#likeForm').attr('el-rel') == undefined);
-	
+
 	addToReport('#likeForm','likeEl',val);
 	removeForm();
 	removeBottomSpace();
@@ -682,18 +682,39 @@ function editModeOff() {
 //	unlistenToScroll();
 }
 
-//function sendEmail() {
-//var title = $('#title').val();
-//var body = $('#report').html();
-//window.location='mailto:?subject=' + title + '&body=' + body;
-//}
+function sendEmail() {
+	var title = $('#title').val();
+	var body = '';
+	$('#report .el').each(function() {
+		if ($(this).hasClass('textEl')) {
+			body += $(this).html() + '%0D%0A%0D%0A';
+		} else if ($(this).hasClass('hrEl')) {
+			body += '---%0D%0A%0D%0A';
+		} else if ($(this).hasClass('quoteEl')) {
+			body += '"' + $(this).html() + '"' + '%0D%0A%0D%0A';
+		} else if ($(this).hasClass('taskEl')) {
+			body += 'ToDo: ' + $(this).text() + '%0D%0A%0D%0A';
+		} else if ($(this).hasClass('likeEl')) {
+			body += $(this).text() + '%0D%0A%0D%0A';
+		} else if ($(this).hasClass('listEl')) {
+			var val = replaceAll($(this).html(),'<li>',"%0D%0A- ");
+			val = replaceAll(val,'</li>','');
+			val = replaceAll(val,'<ul>','');
+			val = replaceAll(val,'</ul>','');
+			val = replaceAll(val,'<p>','');
+			val = replaceAll(val,'</p>','');
+			body += val + '%0D%0A%0D%0A';
+		}
+	});
+	window.location='mailto:?subject=' + title + '&body=' + body;
+}
 
 function saveUnsavedContent() {
 	var input = $('.editForm.visible input[type="text"]').val();
 	var textarea = $('.editForm.visible textarea').val();
 	var val = (input != undefined ? input : '') + (textarea != undefined ? textarea : '');
 	var id = $('.editForm.visible').attr('id');
-	
+
 	if (val != undefined) {
 		UNSAVED[id] = val;
 	}

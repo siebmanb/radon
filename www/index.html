@@ -19,7 +19,7 @@
 			document.body.style.marginTop = "20px";
 		}
 	}
-	
+
 	window.addEventListener('load', function() {
 		FastClick.attach(document.body);
 	}, false);
@@ -37,8 +37,8 @@
 					odorless, tasteless noble gas</b>. It is simple, yet powerful, just
 				like this app that helps you manage your reading notes.</b>
 			</p>
-			<div id='gotonotes' class='btn btn-block btn-primary btnactive'>Manage my
-				reading notes</div>
+			<div id='gotonotes' class='btn btn-block btn-primary btnactive'>Manage
+				my reading notes</div>
 			<div id='gototips' class='btn btn-block btn-primary'>Read the
 				tips</div>
 	</div>
@@ -54,7 +54,7 @@
 			<p>
 				Radon app has <b>no back button</b>, to make sure the content gets
 				all your attention. To go back to the previous screen, you should
-				use <b>a right swipe</b> on the current screen.
+				use a <b>right swipe</b> on the current screen.
 			</p>
 
 			<h8>Delete button</h8>
@@ -68,15 +68,20 @@
 
 			<h8>Edit a note</h8>
 			<p>
-				<b>To edit a note</b>, like its title for example, simply <b>open
+				To edit a note, like its title for example, simply <b>open
 					it</b> by tapping its name and enter "edit mode" by <b>taping the
 					toolbox</b> at the bottom.
 			</p>
 
 			<h8>Edit an element</h8>
 			<p>
-				<b>To edit an element</b> from a note, simply <b>double-tap on
+				To edit an element from a note, simply <b>double-tap on
 					it</b>.
+			</p>
+			
+			<h8>Share a note</h8>
+			<p>
+				To share a note by email, simply <b>hold on the screen</b> with the note opened. An email will be auto-filled with your note content.
 			</p>
 
 			<h8 class='last'>We hope you will enjoy using our Radon app as
@@ -101,8 +106,10 @@
 			<div id='titleDiv'></div>
 		</div>
 		<div id='report'></div>
-		<!-- 			<div id='modal'><span class="fui-mail"></span>Send by e-mail</div> -->
-		<!-- 			<div id='maskModal'></div> -->
+		<div id='modal'>
+			<span class="fui-mail"></span>Send by e-mail
+		</div>
+		<div id='maskModal' class='needsclick'></div>
 
 		<footer class='below'>
 			<div class="btn-toolbar">
@@ -126,7 +133,9 @@
 						<span class="fui-arrow-right"></span>
 					</div>
 					<div id='mask'>
-						<div id='maskcontainer'><span class='tagsinput-add'></span></div>
+						<div id='maskcontainer'>
+							<span class='tagsinput-add'></span>
+						</div>
 					</div>
 				</div>
 			</div>

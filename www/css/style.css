@@ -1,4 +1,9 @@
 /* general */
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Disable selection/copy in UIWebView */
+}
+
 html, body {
 	height: 97%;
 }
