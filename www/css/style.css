@@ -443,7 +443,7 @@ footer #maskcontainer {
     margin: auto;
     opacity: 0;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     text-align: center;
     top: 40%;
     width: 60%;
@@ -468,7 +468,7 @@ footer #maskcontainer {
 	display: none;
 	height: 100%;
 	left: 0;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 1;
