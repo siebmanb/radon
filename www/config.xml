@@ -11,7 +11,7 @@
     <preference name="webviewbounce" value="false" />
     <preference name="disallowOverscroll" value="true" />
     <preference name="disallowOverscroll" value="true" />
-    <preference name="prerendered-icon" value="true" />
+    <preference name="prerendered-icon" value="false" />
     <preference name="stay-in-webview" value="false" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
