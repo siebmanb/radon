@@ -15,3 +15,6 @@ shell.exec( "cp ./www/res/screen/android/screen-hdpi-portrait.png platforms/andr
 shell.exec( "cp ./www/res/screen/android/screen-ldpi-portrait.png platforms/android/res/drawable-ldpi/splash.png" );
 shell.exec( "cp ./www/res/screen/android/screen-mdpi-portrait.png platforms/android/res/drawable-mdpi/splash.png" );
 shell.exec( "cp ./www/res/screen/android/screen-xhdpi-portrait.png platforms/android/res/drawable-xhdpi/splash.png" );
+
+shell.exec( "rm -r platforms/ios/www/res" );
+shell.exec( "rm -r platforms/android/assets/www/res" );
