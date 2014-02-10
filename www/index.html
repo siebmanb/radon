@@ -136,7 +136,7 @@
 	<script type="text/javascript">
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
-		if (parseFloat(window.device.version) >= 7.0) {
+		if (device.platform != 'Android' && parseFloat(window.device.version) >= 7.0) {
 			$('#notes .header, #edit .header').css('padding-top','30px');
 			$('#addNote').css('top','25px');
 			$('#infoBtn').css('top','25px');

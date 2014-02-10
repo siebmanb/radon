@@ -294,8 +294,10 @@ function addToReport(input,classN,val,fromdb) {
 }
 
 function showModal() {
-	$('#modal').css('opacity',1);
-	$('#maskModal').show();
+	if (device.platform != 'Android') {
+		$('#modal').css('opacity',1);
+		$('#maskModal').show();
+	}
 }
 
 /***************/
